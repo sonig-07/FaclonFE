@@ -1,0 +1,142 @@
+
+.falcon-header {
+
+  text-align: center;
+  padding: 20px;
+
+}
+
+.main-heading {
+
+  color: rgb(254, 254, 254);
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+
+}
+
+
+.chart-card {
+
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgb(203, 208, 225);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+}
+
+
+.chart-title {
+
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b1f3a;
+
+}
+
+
+.chart-svg {
+
+  width: 100%;
+  height: auto;
+
+}
+
+
+.axis {
+
+  stroke: #333;
+  stroke-width: 2;
+
+}
+
+
+
+.bar {
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+
+.bar:hover {
+
+  opacity: 0.7;
+  transform: translateY(-5px);
+
+}
+
+
+
+circle {
+
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+
+circle:hover {
+
+  r: 8;
+
+}
+
+
+
+.pie {
+
+  cursor: pointer;
+  transition: 0.3s;
+
+}
+
+
+.pie:hover {
+
+  opacity: 0.8;
+
+}
+
+
+
+.label {
+
+  font-size: 14px;
+  fill: #333;
+
+}
+
+
+.legend {
+
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+}
+
+
+.legend-item {
+
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+}
+
+
+.legend-box {
+
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  border-radius: 3px;
+
+}

@@ -1,0 +1,44 @@
+/* Full page wrapper */
+
+:host {
+
+  display: block;
+  min-height: 100vh;
+
+}
+
+
+/* Center content vertically */
+
+.app-container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+}
+
+
+/* Optional: add subtle overlay effect */
+
+.app-container {
+
+  background: linear-gradient(
+    135deg,
+    rgba(11,31,58,0.95),
+    rgba(18,58,107,0.95)
+  );
+
+}
+
+
+/* Smooth text rendering */
+
+* {
+
+  box-sizing: border-box;
+
+}

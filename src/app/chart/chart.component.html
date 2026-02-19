@@ -1,0 +1,166 @@
+<div class="falcon-header">
+
+  <h1 class="main-heading">Falcon Frontend Assignment</h1>
+
+</div>
+
+<div class="chart-card" *ngIf="chartOptions">
+
+
+  <h2 class="chart-title">
+
+    {{chartOptions.title}}
+
+  </h2>
+
+
+  <svg viewBox="0 0 600 400" class="chart-svg">
+
+
+    <ng-container *ngIf="chartOptions.type === 'column'">
+
+
+      <line x1="80" y1="50" x2="80" y2="300" class="axis"/>
+
+      <line x1="80" y1="300" x2="550" y2="300" class="axis"/>
+
+
+
+      <rect
+
+        *ngFor="let s of chartOptions.series; let i=index"
+
+        [attr.x]="120 + i*150"
+
+        [attr.y]="300 - s.value * multiplier"
+
+        width="60"
+
+        [attr.height]="s.value * multiplier"
+
+        [attr.fill]="s.color"
+
+        class="bar"
+
+      ></rect>
+
+
+      <text
+
+        *ngFor="let s of chartOptions.series; let i=index"
+
+        [attr.x]="150 + i*150"
+
+        y="330"
+
+        text-anchor="middle"
+
+        class="label"
+
+      >
+
+        {{s.name}}
+
+      </text>
+
+
+    </ng-container>
+
+
+    <ng-container *ngIf="chartOptions.type === 'line'">
+
+
+      <line x1="80" y1="50" x2="80" y2="300" class="axis"/>
+
+      <line x1="80" y1="300" x2="550" y2="300" class="axis"/>
+
+
+
+      <polyline
+
+        [attr.points]="getLinePoints()"
+
+        fill="none"
+
+        stroke="#0b1f3a"
+
+        stroke-width="3"
+
+      ></polyline>
+
+
+
+      <circle
+
+        *ngFor="let s of chartOptions.series; let i=index"
+
+        [attr.cx]="100 + i*150"
+
+        [attr.cy]="300 - s.value * multiplier"
+
+        r="6"
+
+        [attr.fill]="s.color"
+
+      ></circle>
+
+
+    </ng-container>
+
+
+
+    <ng-container *ngIf="chartOptions.type === 'pie'">
+
+
+      <path
+
+        *ngFor="let s of chartOptions.series; let i=index"
+
+        [attr.d]="getPieSlice(i)"
+
+        [attr.fill]="s.color"
+
+        class="pie"
+
+      ></path>
+
+
+    </ng-container>
+
+
+
+  </svg>
+
+
+
+  <div class="legend">
+
+
+    <div
+
+      *ngFor="let s of chartOptions.series"
+
+      class="legend-item"
+
+    >
+
+
+      <span
+
+        class="legend-box"
+
+        [style.background]="s.color"
+
+      ></span>
+
+
+      {{s.name}} ({{s.value}})
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
