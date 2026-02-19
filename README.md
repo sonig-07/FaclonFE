@@ -1,6 +1,6 @@
 # Falcon Frontend Assignment
 
-## Project Overview
+## Overview
 
 This project implements a reusable Angular chart component that dynamically renders multiple chart types using SVG and TypeScript, without any external chart libraries.
 
@@ -44,15 +44,15 @@ It is fully reusable and renders charts based on configuration input using the f
 
 ### Column Chart
 
- ![alt text](<Screenshot 2026-02-20 003348.png>)
+  ![Column](<Screenshots/Column.png>)
 
 ### Pie Chart
 
-  ![alt text](<Screenshot 2026-02-20 003421.png>)
+  ![Pie](<Screenshots/Pie.png>)
 
 ### Line Chart
 
-  ![alt text](<Screenshot 2026-02-20 003446.png>)
+  ![Line](<Screenshots/Line.png>)
 
 ---
 
@@ -70,6 +70,24 @@ screenshots/
 
 README.md
 ```
+---
+
+## Approach
+
+1. Created a reusable Angular component `<io-chart>` that accepts `chartOptions` as input to control chart type, title, and data.
+
+2. Used Angular `*ngIf` to dynamically render Column, Line, or Pie chart based on the `type` property.
+
+3. Implemented Column chart using SVG `<rect>` and calculated bar height and position in TypeScript.
+
+4. Implemented Line chart using SVG `<polyline>` and `<circle>` with coordinates calculated from data values.
+
+5. Implemented Pie chart using SVG `<path>` and calculated slice angles using data proportions.
+
+6. Used SVG `viewBox` and percentage width to make the chart responsive.
+
+7. Ensured reusability so different charts can be rendered by changing only the input configuration.
+
 
 ---
 
